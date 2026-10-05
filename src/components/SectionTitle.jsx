@@ -1,11 +1,11 @@
 import './SectionTitle.css'
 import BearPaw from '/paw-print.png'
 
-export function SectionTitle({ title, level, text }) {
+export function SectionTitle({ title, level, text, id }) {
     const Tag = `h${level}`;
     return (
         <div>
-            <Tag className='section-title'>
+            <Tag id={id} className='section-title'>
                 <img src={BearPaw} className='section-title-icon'/>
                 {title}
             </Tag>

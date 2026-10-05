@@ -1,0 +1,56 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+
+    background-color: rgb(133, 29, 9);
+    color: rgb(250, 240, 230);
+}
+
+.navbar-top {
+    height: 60px;
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+}
+
+.navbar-title {
+    color: rgb(250, 240, 230);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.menu-button {
+    border: none;
+    background: none;
+
+    color: rgb(250, 240, 230);
+
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.navbar-menu {
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px 20px 20px;
+    gap: 15px;
+}
+
+.navbar-menu a {
+    color: rgb(250, 240, 230);
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar-menu a:hover {
+    text-decoration: underline;
+}

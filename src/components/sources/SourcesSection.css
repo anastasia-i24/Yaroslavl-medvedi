@@ -1,0 +1,7 @@
+.sources-list a {
+  color: rgb(133, 29, 9);
+}
+
+.sources-list li::marker {
+  color: rgb(133, 29, 9);
+}
