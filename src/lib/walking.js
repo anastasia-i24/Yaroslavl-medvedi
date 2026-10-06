@@ -1,47 +1,47 @@
-const ROUTING_API_KEY = 'aeed9ec9-94e9-411d-bc16-c43d3d91ebe6';
+import polyline from '@mapbox/polyline';
 
-const ROUTING_URL = 'https://api.routing.yandex.net/v2/route';
+const OSRM_URL = 'https://routing.openstreetmap.de/routed-foot/route/v1/foot';
 
-export async function fetchWalkingRouteThroughPoints(points) {
+export async function fetchWalkingRouteSegments(points) {
     if (points.length < 2) {
         throw new Error('Нужно минимум 2 точки для построения маршрута');
     }
 
-    if (points.length > 25) {
-        throw new Error('Routing API принимает не более 25 точек в одном запросе');
-    }
+    const coordsString = points
+        .map(([lon, lat]) => `${lon},${lat}`)
+        .join(';');
 
-    const waypoints = points
-        .map(([lon, lat]) => `${lat},${lon}`)
-        .join('|');
-
-    const url = `${ROUTING_URL}?apikey=${ROUTING_API_KEY}&waypoints=${waypoints}&mode=walking`;
+    const url = `${OSRM_URL}/${coordsString}?geometries=polyline&overview=full`;
 
     const response = await fetch(url);
 
     if (!response.ok) {
-        throw new Error(`Routing API error: ${response.status}`);
+        throw new Error(`OSRM API error: ${response.status}`);
     }
 
     const data = await response.json();
 
-    return extractCoordinates(data);
-}
-
-function extractCoordinates(data) {
-    const coords = [];
-
-    if (!data?.route?.legs) {
-        return coords;
+    if (!data.routes || data.routes.length === 0) {
+        throw new Error('OSRM не вернул маршрут');
     }
 
-    data.route.legs.forEach((leg) => {
-        leg.steps.forEach((step) => {
-            step.geometry.coordinates.forEach((coord) => {
-                coords.push(coord);
-            });
-        });
-    });
+    const route = data.routes[0];
 
-    return coords;
+    // Если OSRM вернул geometry как строку polyline — декодируем
+    if (typeof route.geometry === 'string') {
+        const decoded = polyline.decode(route.geometry);
+
+        // polyline.decode возвращает [lat, lon], а Яндекс.Карты ждут [lon, lat]
+        // Поэтому разворачиваем каждую пару
+        const coordinates = decoded.map(([lat, lon]) => [lon, lat]);
+
+        return [coordinates];
+    }
+
+    // Если geometry — объект GeoJSON (на случай, если сервер всё-таки вернёт geojson)
+    if (route.geometry?.coordinates?.length > 1) {
+        return [route.geometry.coordinates];
+    }
+
+    throw new Error('OSRM вернул маршрут без геометрии');
 }

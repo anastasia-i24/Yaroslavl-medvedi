@@ -11,7 +11,7 @@ import {
     YMapMarker,
     YMapFeature,
 } from "../../lib/ymaps3";
-import { fetchWalkingRouteThroughPoints } from '../../lib/walking';
+import { fetchWalkingRouteSegments } from '../../lib/walking';
 
 import { useState, useRef, useEffect, useMemo } from "react";
 import { routes } from "../../data/routes";
@@ -25,7 +25,7 @@ export function RoutesSection() {
 
     const [selectedRoute, setSelectedRoute] = useState(routeList[0].id);
     const [activeBear, setActiveBear] = useState(null);
-    const [routePath, setRoutePath] = useState([]);
+    const [routeSegments, setRouteSegments] = useState([]);
 
     const currentRoute = routeList.find((r) => r.id === selectedRoute);
 
@@ -42,7 +42,6 @@ export function RoutesSection() {
         [currentBears]
     );
 
-    // Показываем весь маршрут ТОЛЬКО при смене маршрута
     useEffect(() => {
         if (routeCoordinates.length === 0) return;
 
@@ -60,24 +59,29 @@ export function RoutesSection() {
         });
     }, [routeCoordinates]);
 
-    // Загрузка пешеходного маршрута
     useEffect(() => {
-        if (routeCoordinates.length < 2) {
-            return;
-        }
+        if (routeCoordinates.length < 2) return;
 
         let cancelled = false;
 
         (async () => {
             try {
-                const path = await fetchWalkingRouteThroughPoints(routeCoordinates);
+                const segments = await fetchWalkingRouteSegments(routeCoordinates);
                 if (!cancelled) {
-                    setRoutePath(path);
+                    setRouteSegments(segments);
                 }
             } catch (err) {
                 console.error('Не удалось построить маршрут:', err);
+
                 if (!cancelled) {
-                    setRoutePath(routeCoordinates);
+                    const fallbackSegments = [];
+                    for (let i = 0; i < routeCoordinates.length - 1; i++) {
+                        fallbackSegments.push([
+                            routeCoordinates[i],
+                            routeCoordinates[i + 1],
+                        ]);
+                    }
+                    setRouteSegments(fallbackSegments);
                 }
             }
         })();
@@ -87,7 +91,6 @@ export function RoutesSection() {
         };
     }, [routeCoordinates]);
 
-    // Перемещение к медведю — просто, без логики «откуда пришли»
     useEffect(() => {
         if (!activeBear) return;
 
@@ -122,19 +125,37 @@ export function RoutesSection() {
             />
 
             <div className="map">
-                <YMap ref={mapRef} location={{ center: [39.893813, 57.626559], zoom: 13 }}>
+                <YMap
+                    ref={mapRef}
+                    location={{ center: [39.893813, 57.626559], zoom: 13 }}
+                >
                     <YMapDefaultSchemeLayer />
                     <YMapDefaultFeaturesLayer />
 
-                    {routePath.length > 1 && (
+                    {routeSegments.map((segment, index) => (
                         <YMapFeature
-                            geometry={{ type: "LineString", coordinates: routePath }}
-                            style={{ stroke: [{ color: "#851D09", width: 5 }] }}
+                            key={`${selectedRoute}-${index}`}
+                            geometry={{
+                                type: "LineString",
+                                coordinates: segment,
+                            }}
+                            style={{
+                                stroke: [
+                                    {
+                                        color: "rgba(170, 45, 20, 0.8)",
+                                        width: 4,
+                                        dash: [2, 8]
+                                    },
+                                ],
+                            }}
                         />
-                    )}
+                    ))}
 
                     {currentBears.map((bear) => (
-                        <YMapMarker key={bear.id} coordinates={bear.coordinates}>
+                        <YMapMarker
+                            key={bear.id}
+                            coordinates={bear.coordinates}
+                        >
                             <img
                                 src={bear.image}
                                 alt=""
