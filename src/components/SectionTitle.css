@@ -1,17 +1,25 @@
-.section-title-icon {
-    filter: brightness(0) invert(1);
-    width: 45px;
-    margin-right: 10px;
-    display: inline;
+.section-title {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin: 30px 0 8px;
+  padding: 0 0 12px;
+
+  border-bottom: 3px solid rgb(133, 29, 9);
+
+  color: rgb(133, 29, 9);
+
+  font-size: 30px;
+  line-height: 1.2;
 }
 
-.section-title {
-  display: flex;
-  align-items: center; 
-  background-color: rgb(133, 29, 9);
-  color: rgb(250, 240, 230);
-  padding: 15px 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  max-width: 600px;
+.section-title + p,
+.section-title-text {
+  margin: 0 0 14px;
+
+  font-size: 17px;
+  line-height: 1.5;
 }

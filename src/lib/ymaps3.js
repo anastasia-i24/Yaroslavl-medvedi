@@ -15,4 +15,5 @@ export const {
   YMapDefaultSchemeLayer,
   YMapDefaultFeaturesLayer,
   YMapMarker,
+  YMapFeature,
 } = reactify.module(window.ymaps3);

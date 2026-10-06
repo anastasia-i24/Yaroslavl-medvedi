@@ -13,7 +13,7 @@ export function RouteSelector({ routes, selectedRoute, onSelect }) {
           }
           onClick={() => onSelect(route.id)}
         >
-          {route.title}
+          {route.short_title}
         </button>
       ))}
     </div>

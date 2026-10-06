@@ -1,40 +1,55 @@
 .bear-card {
-  background-color: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
-
-  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative; 
 }
 
-.bear-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
-}
+.bear-card-check {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 
-.bear-card-image {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
-}
+  width: 36px;
+  height: 36px;
 
-.bear-card-content {
-  padding: 16px;
-}
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-.bear-card-content h3 {
-  margin: 0 0 8px;
+  border: 2px solid white;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.85);
+  color: rgb(133, 29, 9);
+
   font-size: 20px;
+  font-weight: bold;
+  line-height: 1;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+
+  transition:
+    background 0.2s,
+    color 0.2s,
+    transform 0.2s;
+}
+
+.bear-card-check:hover {
+  transform: scale(1.08);
+}
+
+.bear-card-check[aria-pressed="true"] {
+  background: rgb(133, 29, 9);
+  color: white;
+  border-color: rgb(133, 29, 9);
+}
+
+.bear-card.visited .bear-card-image {
+  filter: grayscale(0.4) brightness(0.95);
 }
 
 .bear-card-address {
   margin: 0 0 10px;
   color: #666;
   font-size: 14px;
-}
-
-.bear-card-content p:last-child {
-  margin-bottom: 0;
-  line-height: 1.5;
 }

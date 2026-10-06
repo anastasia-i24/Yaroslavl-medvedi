@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import BearPaw from '/paw-print.png'
 import './NavBar.css';
 
 export function NavBar() {
@@ -7,6 +8,7 @@ export function NavBar() {
     return (
         <header className="navbar">
             <div className="navbar-top">
+                <img src={BearPaw} className='bear-paw'/>
                 <a href="/" className="navbar-title">
                     Медведи Ярославля
                 </a>
