@@ -7,9 +7,16 @@ export function RoutePresentation({
     nums,
     fullTitle,
     activeBear,
+    selectedRoute,
     onSlideChange,
 }) {
     const cardsRef = useRef(null);
+
+    useEffect(() => {
+        if (cardsRef.current) {
+            cardsRef.current.scrollLeft = 0;
+        }
+    }, [selectedRoute]);
 
     useEffect(() => {
         const container = cardsRef.current;

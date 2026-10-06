@@ -13,7 +13,7 @@ export const bears = {
       "Медведь держит рыбу — один из исторических символов Ярославля.",
     sourceUrl:
       "",
-    image: "public/paw-print.png"
+    image: "src/assets/bearWithFish.png"
   },
 
   roaringBear: {
@@ -27,7 +27,7 @@ export const bears = {
       "Медведь периодически издаёт настоящий медвежий рык.",
     sourceUrl:
       "https://vesti-yaroslavl.ru/item/94770-skolko-medvedej-na-ulitsakh-yaroslavlya-putevoditel-dlya-turistov",
-    image: "public/paw-print.png"
+    image: "src/assets/roaringBear.jpg"
   },
 
   bearWithAxe: {
@@ -41,7 +41,7 @@ export const bears = {
       "Скульптура напоминает о гербе и исторической символике Ярославля.",
     sourceUrl:
       "https://vesti-yaroslavl.ru/item/94770-skolko-medvedej-na-ulitsakh-yaroslavlya-putevoditel-dlya-turistov",
-    image: "public/paw-print.png"
+    image: "src/assets/bearWithAxe.webp"
   },
 
   oilman: {
@@ -54,7 +54,7 @@ export const bears = {
       "описание карточки",
     sourceUrl:
       "",
-    image: "public/paw-print.png"
+    image: "src/assets/oilman.webp"
   },
 
   twins: {
@@ -67,7 +67,7 @@ export const bears = {
       "описание карточки",
     sourceUrl:
       "",
-    image: "public/paw-print.png"
+    image: "src/assets/twins.webp"
   },
 
   artist: {
@@ -80,7 +80,7 @@ export const bears = {
       "описание карточки",
     sourceUrl:
       "",
-    image: "public/paw-print.png"
+    image: "src/assets/artist.webp"
   },
 
   traveler: {
@@ -93,7 +93,7 @@ export const bears = {
       "описание карточки",
     sourceUrl:
       "",
-    image: "public/paw-print.png"
+    image: "src/assets/traveler.webp"
   },
 
   clerk: {
@@ -106,7 +106,7 @@ export const bears = {
       "описание карточки",
     sourceUrl:
       "",
-    image: "public/paw-print.png"
+    image: "src/assets/clerk.webp"
   },
 
   mama_bear: {
@@ -119,7 +119,7 @@ export const bears = {
       "описание карточки",
     sourceUrl:
       "",
-    image: "public/paw-print.png"
+    image: "src/assets/mama_bear.webp"
   },
 
   writer: {
@@ -132,7 +132,7 @@ export const bears = {
       "описание карточки",
     sourceUrl:
       "",
-    image: "public/paw-print.png"
+    image: "src/assets/writer.webp"
   },
 
   blacksmith: {
@@ -145,7 +145,7 @@ export const bears = {
       "описание карточки",
     sourceUrl:
       "",
-    image: "public/paw-print.png"
+    image: "src/assets/blacksmith.webp"
   },
 
   with_cub: {
@@ -158,7 +158,7 @@ export const bears = {
       "описание карточки",
     sourceUrl:
       "",
-    image: "public/paw-print.png"
+    image: "src/assets/with_cub.webp"
   },
 
   welcoming: {
@@ -171,7 +171,7 @@ export const bears = {
       "описание карточки",
     sourceUrl:
       "",
-    image: "public/paw-print.png"
+    image: "src/assets/welcoming.webp"
   },
 
   friendly: {
@@ -184,7 +184,7 @@ export const bears = {
       "описание карточки",
     sourceUrl:
       "",
-    image: "public/paw-print.png"
+    image: "src/assets/friendly.webp"
   },
 
   // МЕДВЕДИКИ
@@ -199,7 +199,7 @@ export const bears = {
       "Медведик посвящён ярославскому купечеству — важной части истории и экономического развития города.",
     sourceUrl:
       "https://medved-yaroslavl.ru/",
-    image: "public/paw-print.png"
+    image: "src/assets/merchant.jpg"
   },
 
   cosmonarynya: {
@@ -212,7 +212,7 @@ export const bears = {
       "Медведик в образе женщины-космонавта, связанный с историей освоения космоса и достижениями ярославцев.",
     sourceUrl:
       "https://medved-yaroslavl.ru/",
-    image: "public/paw-print.png"
+    image: "src/assets/cosmonarynya.jpg"
   },
 
   theatreArtist: {
@@ -225,7 +225,7 @@ export const bears = {
       "Медведик посвящён театральной культуре Ярославля и истории русского театра.",
     sourceUrl:
       "https://medved-yaroslavl.ru/",
-    image: "public/paw-print.png"
+    image: "src/assets/theatreArtist.jpg"
   },
 
   operaSinger: {
@@ -238,12 +238,12 @@ export const bears = {
       "Медведик посвящён музыкальной истории Ярославля и выдающимся представителям оперного искусства.",
     sourceUrl:
       "https://medved-yaroslavl.ru/",
-    image: "public/paw-print.png"
+    image: "src/assets/operaSinger.jpg"
   },
 
   worker: {
     id: "worker",
-    title: "Медведик-рабочий",
+    title: "Медведик Рабочий",
     type: "medvedik",
     address: "Юбилейный парк",
     coordinates: [39.856034, 57.636178],
@@ -251,7 +251,7 @@ export const bears = {
       "Медведик посвящён промышленному развитию Ярославля и людям, создававшим его промышленную историю.",
     sourceUrl:
       "https://medved-yaroslavl.ru/",
-    image: "public/paw-print.png"
+    image: "src/assets/worker.jpg"
   },
 
   journalist: {
@@ -264,7 +264,7 @@ export const bears = {
       "Медведик символизирует журналистику и развитие информационной культуры Ярославля.",
     sourceUrl:
       "https://medved-yaroslavl.ru/",
-    image: "public/paw-print.png"
+    image: "src/assets/journalist.jpg"
   },
 
   sower: {
@@ -277,7 +277,7 @@ export const bears = {
       "Медведик-сеятель связан с земледелием и сельскохозяйственной историей Ярославского края.",
     sourceUrl:
       "https://medved-yaroslavl.ru/",
-    image: "public/paw-print.png"
+    image: "src/assets/sower.jpg"
   },
 
   poet: {
@@ -290,7 +290,7 @@ export const bears = {
       "Медведик посвящён литературному наследию Ярославля и поэтической традиции города.",
     sourceUrl:
       "https://medved-yaroslavl.ru/",
-    image: "public/paw-print.png"
+    image: "src/assets/poet.jpg"
   },
 
   governor: {
@@ -304,7 +304,7 @@ export const bears = {
       "В частности, образ связан с первым губернатором Ярославской губернии Алексеем Мельгуновым.",
     sourceUrl:
       "https://medved-yaroslavl.ru/medvedik-gubernator",
-    image: "public/paw-print.png"
+    image: "src/assets/governor.jpg"
   },
 
   admiral: {
@@ -317,7 +317,7 @@ export const bears = {
       "Медведик посвящён военно-морской истории России и адмиралу Фёдору Ушакову.",
     sourceUrl:
       "https://medved-yaroslavl.ru/",
-    image: "public/paw-print.png"
+    image: "src/assets/admiral.jpg"
   },
 
   confectioner: {
@@ -330,7 +330,7 @@ export const bears = {
       "Медведик посвящён истории кондитерского производства и предпринимательства Ярославля.",
     sourceUrl:
       "https://medved-yaroslavl.ru/",
-    image: "public/paw-print.png"
+    image: "src/assets/confectioner.jpg"
   },
 
   constructor: {
@@ -344,7 +344,7 @@ export const bears = {
       "Его образ связан с Михаилом Кошкиным — уроженцем Ярославской губернии и известным конструктором.",
     sourceUrl:
       "https://medved-yaroslavl.ru/medvedik-konstruktor",
-    image: "public/paw-print.png"
+    image: "src/assets/constructor.jpg"
   },
 
   brewer: {
@@ -357,7 +357,7 @@ export const bears = {
       "Медведик посвящён истории пивоварения и промышленного производства Ярославля.",
     sourceUrl:
       "https://medved-yaroslavl.ru/",
-    image: "public/paw-print.png"
+    image: "src/assets/brewer.webp"
   },
 
   laborDynasty: {
@@ -370,7 +370,7 @@ export const bears = {
       "Композиция посвящена трудовым династиям — преемственности профессии и семейным традициям.",
     sourceUrl:
       "https://medved-yaroslavl.ru/",
-    image: "public/paw-print.png"
+    image: "src/assets/laborDinasty.webp"
   },
 
   mintWorker: {
@@ -383,7 +383,7 @@ export const bears = {
       "Медведик посвящён истории чеканки и денежного дела Ярославля.",
     sourceUrl:
       "https://medved-yaroslavl.ru/",
-    image: "public/paw-print.png"
+    image: "src/assets/mintWorker.webp"
   },
 
   champion: {
@@ -396,7 +396,7 @@ export const bears = {
       "Медведик посвящён спортивным достижениям Ярославля.",
     sourceUrl:
       "https://medved-yaroslavl.ru/",
-    image: "public/paw-print.png"
+    image: "src/assets/champion.webp"
   },
 
   printer: {
@@ -409,7 +409,7 @@ export const bears = {
       "Медведик посвящён истории типографского дела, печати и журналистики Ярославля.",
     sourceUrl:
       "https://medved-yaroslavl.ru/doctor",
-    image: "public/paw-print.png"
+    image: "src/assets/printer.webp"
   },
 
   doctor: {
@@ -422,7 +422,7 @@ export const bears = {
       "Новый медведик, открытый в сентябре 2026 года. Он представляет собирательный образ врача и посвящён истории и современности ярославской медицины.",
     sourceUrl:
       "https://medved-yaroslavl.ru/doctor",
-    image: "public/paw-print.png"
+    image: "src/assets/doctor.webp"
   },
 
   volleyball: {
@@ -435,7 +435,7 @@ export const bears = {
     "описание для карточки",
     sourceUrl:
       "https://medved-yaroslavl.ru/doctor",
-    image: "public/paw-print.png"
+    image: "src/assets/volleyball.webp"
   }
   
 };

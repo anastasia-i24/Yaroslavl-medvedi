@@ -11,8 +11,9 @@ import {
     YMapMarker,
     YMapFeature,
 } from "../../lib/ymaps3";
+import { fetchWalkingRouteThroughPoints } from '../../lib/walking';
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import { routes } from "../../data/routes";
 import { bears } from "../../data/bears";
 
@@ -24,69 +25,81 @@ export function RoutesSection() {
 
     const [selectedRoute, setSelectedRoute] = useState(routeList[0].id);
     const [activeBear, setActiveBear] = useState(null);
+    const [routePath, setRoutePath] = useState([]);
 
     const currentRoute = routeList.find((r) => r.id === selectedRoute);
 
-    const currentBears = currentRoute.bears
-        .map((bearId) => bears[bearId])
-        .filter(Boolean);
+    const currentBears = useMemo(
+        () =>
+            currentRoute.bears
+                .map((id) => Object.values(bears).find((b) => b.id === id))
+                .filter(Boolean),
+        [currentRoute]
+    );
 
-    const routeCoordinates = currentBears.map((b) => b.coordinates);
+    const routeCoordinates = useMemo(
+        () => currentBears.map((b) => b.coordinates),
+        [currentBears]
+    );
 
-    useEffect(() => {
-        const expected = currentBears.length + 1;
-        if (currentRoute.slides.length !== expected) {
-            console.warn(
-                `[${selectedRoute}] слайдов ${currentRoute.slides.length}, ` +
-                `медведей ${currentBears.length}, ожидалось слайдов ${expected}`
-            );
-        }
-        if (currentRoute.nums && currentRoute.nums.length !== currentRoute.slides.length) {
-            console.warn(
-                `[${selectedRoute}] nums ${currentRoute.nums.length} ≠ slides ${currentRoute.slides.length}`
-            );
-        }
-    }, [selectedRoute, currentBears.length, currentRoute.slides.length, currentRoute.nums]);
-
+    // Показываем весь маршрут ТОЛЬКО при смене маршрута
     useEffect(() => {
         if (routeCoordinates.length === 0) return;
 
         const lons = routeCoordinates.map((c) => c[0]);
         const lats = routeCoordinates.map((c) => c[1]);
 
-        mapRef.current?.setLocation({
-            bounds: [
-                [Math.min(...lons), Math.min(...lats)],
-                [Math.max(...lons), Math.max(...lats)],
-            ],
-            duration: 500,
-        });
-    }, [selectedRoute]);
-
-    useEffect(() => {
-        if (!activeBear) {
-            if (routeCoordinates.length === 0) return;
-
-            const lons = routeCoordinates.map((c) => c[0]);
-            const lats = routeCoordinates.map((c) => c[1]);
-
-            mapRef.current?.setLocation({
+        mapRef.current?.update({
+            location: {
                 bounds: [
                     [Math.min(...lons), Math.min(...lats)],
                     [Math.max(...lons), Math.max(...lats)],
                 ],
                 duration: 500,
-            });
+            },
+        });
+    }, [routeCoordinates]);
+
+    // Загрузка пешеходного маршрута
+    useEffect(() => {
+        if (routeCoordinates.length < 2) {
             return;
         }
 
-        const bear = bears[activeBear];
+        let cancelled = false;
+
+        (async () => {
+            try {
+                const path = await fetchWalkingRouteThroughPoints(routeCoordinates);
+                if (!cancelled) {
+                    setRoutePath(path);
+                }
+            } catch (err) {
+                console.error('Не удалось построить маршрут:', err);
+                if (!cancelled) {
+                    setRoutePath(routeCoordinates);
+                }
+            }
+        })();
+
+        return () => {
+            cancelled = true;
+        };
+    }, [routeCoordinates]);
+
+    // Перемещение к медведю — просто, без логики «откуда пришли»
+    useEffect(() => {
+        if (!activeBear) return;
+
+        const bear = Object.values(bears).find((b) => b.id === activeBear);
         if (!bear) return;
 
-        mapRef.current?.setLocation({
-            center: bear.coordinates,
-            zoom: POINT_ZOOM,
-            duration: 500,
+        mapRef.current?.update({
+            location: {
+                center: bear.coordinates,
+                zoom: POINT_ZOOM,
+                duration: 500,
+            },
         });
     }, [activeBear]);
 
@@ -109,43 +122,24 @@ export function RoutesSection() {
             />
 
             <div className="map">
-                <YMap
-                    ref={mapRef}
-                    location={{ center: [39.893813, 57.626559], zoom: 13 }}
-                >
+                <YMap ref={mapRef} location={{ center: [39.893813, 57.626559], zoom: 13 }}>
                     <YMapDefaultSchemeLayer />
                     <YMapDefaultFeaturesLayer />
 
-                    {routeCoordinates.length > 1 && (
+                    {routePath.length > 1 && (
                         <YMapFeature
-                            geometry={{
-                                type: "LineString",
-                                coordinates: routeCoordinates,
-                            }}
-                            style={{
-                                stroke: [{ color: "#851D09", width: 5 }],
-                            }}
+                            geometry={{ type: "LineString", coordinates: routePath }}
+                            style={{ stroke: [{ color: "#851D09", width: 5 }] }}
                         />
                     )}
 
                     {currentBears.map((bear) => (
-                        <YMapMarker
-                            key={bear.id}
-                            coordinates={bear.coordinates}
-                        >
-                            <div
-                                className={
-                                    activeBear === bear.id
-                                        ? "bear-marker active"
-                                        : "bear-marker"
-                                }
-                            >
-                                <img
-                                    src={bear.image}
-                                    alt=""
-                                    className="bear-paw-marker"
-                                />
-                            </div>
+                        <YMapMarker key={bear.id} coordinates={bear.coordinates}>
+                            <img
+                                src={bear.image}
+                                alt=""
+                                className={`bear-marker${activeBear === bear.id ? ' active' : ''}`}
+                            />
                         </YMapMarker>
                     ))}
                 </YMap>
@@ -157,7 +151,8 @@ export function RoutesSection() {
                 nums={currentRoute.nums}
                 fullTitle={currentRoute.full_title}
                 activeBear={activeBear}
-                onSlideChange={(bearId) => setActiveBear(bearId)}
+                selectedRoute={selectedRoute}
+                onSlideChange={setActiveBear}
             />
         </>
     );
