@@ -11,9 +11,7 @@ export const bears = {
     description:
       "Скульптура работы Зураба Церетели, подаренная Ярославлю к 1000-летию города. " +
       "Медведь держит рыбу — один из исторических символов Ярославля.",
-    sourceUrl:
-      "",
-    image: "src/assets/bearWithFish.png"
+    image: "/bears_images/bearWithFish.png"
   },
 
   roaringBear: {
@@ -25,9 +23,7 @@ export const bears = {
     description:
       "Большая скульптура медведя, установленная рядом с историческим центром Ярославля. " +
       "Медведь периодически издаёт настоящий медвежий рык.",
-    sourceUrl:
-      "https://vesti-yaroslavl.ru/item/94770-skolko-medvedej-na-ulitsakh-yaroslavlya-putevoditel-dlya-turistov",
-    image: "src/assets/roaringBear.jpg"
+    image: "/bears_images/roaringBear.jpg"
   },
 
   bearWithAxe: {
@@ -39,9 +35,7 @@ export const bears = {
     description:
       "Бронзовый медведь, сидящий на лавочке с секирой и яблоком. " +
       "Скульптура напоминает о гербе и исторической символике Ярославля.",
-    sourceUrl:
-      "https://vesti-yaroslavl.ru/item/94770-skolko-medvedej-na-ulitsakh-yaroslavlya-putevoditel-dlya-turistov",
-    image: "src/assets/bearWithAxe.webp"
+    image: "/bears_images/bearWithAxe.webp"
   },
 
   oilman: {
@@ -52,9 +46,7 @@ export const bears = {
     coordinates: [39.849968, 57.580588],
     description:
       "описание карточки",
-    sourceUrl:
-      "",
-    image: "src/assets/oilman.webp"
+    image: "/bears_images/oilman.webp"
   },
 
   twins: {
@@ -65,9 +57,7 @@ export const bears = {
     coordinates: [39.897867, 57.622265],
     description:
       "описание карточки",
-    sourceUrl:
-      "",
-    image: "src/assets/twins.webp"
+    image: "/bears_images/twins.webp"
   },
 
   artist: {
@@ -78,9 +68,7 @@ export const bears = {
     coordinates: [39.897614, 57.628492],
     description:
       "описание карточки",
-    sourceUrl:
-      "",
-    image: "src/assets/artist.jpg"
+    image: "/bears_images/artist.jpg"
   },
 
   traveler: {
@@ -91,9 +79,7 @@ export const bears = {
     coordinates: [39.892786, 57.632647],
     description:
       "описание карточки",
-    sourceUrl:
-      "",
-    image: "src/assets/traveler.jpg"
+    image: "/bears_images/traveler.jpg"
   },
 
   clerk: {
@@ -104,9 +90,7 @@ export const bears = {
     coordinates: [39.891782, 57.625432],
     description:
       "описание карточки",
-    sourceUrl:
-      "",
-    image: "src/assets/clerk.webp"
+    image: "/bears_images/clerk.webp"
   },
 
   mama_bear: {
@@ -117,9 +101,7 @@ export const bears = {
     coordinates: [39.887473, 57.625807],
     description:
       "описание карточки",
-    sourceUrl:
-      "",
-    image: "src/assets/mama_bear.webp"
+    image: "/bears_images/mama_bear.webp"
   },
 
   writer: {
@@ -130,9 +112,7 @@ export const bears = {
     coordinates: [39.885316, 57.627855],
     description:
       "описание карточки",
-    sourceUrl:
-      "",
-    image: "src/assets/writer.jpg"
+    image: "/bears_images/writer.jpg"
   },
 
   blacksmith: {
@@ -143,9 +123,7 @@ export const bears = {
     coordinates: [39.891476, 57.622160],
     description:
       "описание карточки",
-    sourceUrl:
-      "",
-    image: "src/assets/blacksmith.webp"
+    image: "/bears_images/blacksmith.webp"
   },
 
   with_cub: {
@@ -156,9 +134,7 @@ export const bears = {
     coordinates: [39.898264, 57.624274],
     description:
       "описание карточки",
-    sourceUrl:
-      "",
-    image: "src/assets/with_cub.webp"
+    image: "/bears_images/with_cub.webp"
   },
 
   welcoming: {
@@ -169,9 +145,7 @@ export const bears = {
     coordinates: [39.890217, 57.620655],
     description:
       "описание карточки",
-    sourceUrl:
-      "",
-    image: "src/assets/welcoming.jpg"
+    image: "/bears_images/welcoming.jpg"
   },
 
   friendly: {
@@ -182,9 +156,7 @@ export const bears = {
     coordinates: [39.903610, 57.621619],
     description:
       "описание карточки",
-    sourceUrl:
-      "",
-    image: "src/assets/friendly.webp"
+    image: "/bears_images/friendly.webp"
   },
 
   // МЕДВЕДИКИ
@@ -197,9 +169,7 @@ export const bears = {
     coordinates: [39.892134, 57.622812],
     description:
       "Медведик посвящён ярославскому купечеству — важной части истории и экономического развития города.",
-    sourceUrl:
-      "https://medved-yaroslavl.ru/",
-    image: "src/assets/merchant.jpg"
+    image: "/bears_images/merchant.jpg"
   },
 
   cosmonarynya: {
@@ -210,9 +180,7 @@ export const bears = {
     coordinates: [39.870603, 57.621152],
     description:
       "Медведик в образе женщины-космонавта, связанный с историей освоения космоса и достижениями ярославцев.",
-    sourceUrl:
-      "https://medved-yaroslavl.ru/",
-    image: "src/assets/cosmonarynya.jpg"
+    image: "/bears_images/cosmonarynya.jpg"
   },
 
   theatreArtist: {
@@ -223,9 +191,7 @@ export const bears = {
     coordinates: [39.885249, 57.627630],
     description:
       "Медведик посвящён театральной культуре Ярославля и истории русского театра.",
-    sourceUrl:
-      "https://medved-yaroslavl.ru/",
-    image: "src/assets/theatreArtist.jpg"
+    image: "/bears_images/theatreArtist.jpg"
   },
 
   operaSinger: {
@@ -236,9 +202,7 @@ export const bears = {
     coordinates: [39.886550, 57.626393],
     description:
       "Медведик посвящён музыкальной истории Ярославля и выдающимся представителям оперного искусства.",
-    sourceUrl:
-      "https://medved-yaroslavl.ru/",
-    image: "src/assets/operaSinger.jpg"
+    image: "/bears_images/operaSinger.jpg"
   },
 
   worker: {
@@ -249,9 +213,7 @@ export const bears = {
     coordinates: [39.856034, 57.636178],
     description:
       "Медведик посвящён промышленному развитию Ярославля и людям, создававшим его промышленную историю.",
-    sourceUrl:
-      "https://medved-yaroslavl.ru/",
-    image: "src/assets/worker.jpg"
+    image: "/bears_images/worker.jpg"
   },
 
   journalist: {
@@ -262,9 +224,7 @@ export const bears = {
     coordinates: [39.887996, 57.625770],
     description:
       "Медведик символизирует журналистику и развитие информационной культуры Ярославля.",
-    sourceUrl:
-      "https://medved-yaroslavl.ru/",
-    image: "src/assets/journalist.jpg"
+    image: "/bears_images/journalist.jpg"
   },
 
   sower: {
@@ -275,9 +235,7 @@ export const bears = {
     coordinates: [39.894831, 57.626390],
     description:
       "Медведик-сеятель связан с земледелием и сельскохозяйственной историей Ярославского края.",
-    sourceUrl:
-      "https://medved-yaroslavl.ru/",
-    image: "src/assets/sower.jpg"
+    image: "/bears_images/sower.jpg"
   },
 
   poet: {
@@ -288,9 +246,7 @@ export const bears = {
     coordinates: [39.888981, 57.631731],
     description:
       "Медведик посвящён литературному наследию Ярославля и поэтической традиции города.",
-    sourceUrl:
-      "https://medved-yaroslavl.ru/",
-    image: "src/assets/poet.jpg"
+    image: "/bears_images/poet.jpg"
   },
 
   governor: {
@@ -302,9 +258,7 @@ export const bears = {
     description:
       "Медведик посвящён людям, участвовавшим в управлении и развитии Ярославского края. " +
       "В частности, образ связан с первым губернатором Ярославской губернии Алексеем Мельгуновым.",
-    sourceUrl:
-      "https://medved-yaroslavl.ru/medvedik-gubernator",
-    image: "src/assets/governor.jpg"
+    image: "/bears_images/governor.jpg"
   },
 
   admiral: {
@@ -315,9 +269,7 @@ export const bears = {
     coordinates: [39.899326, 57.625748],
     description:
       "Медведик посвящён военно-морской истории России и адмиралу Фёдору Ушакову.",
-    sourceUrl:
-      "https://medved-yaroslavl.ru/",
-    image: "src/assets/admiral.jpg"
+    image: "/bears_images/admiral.jpg"
   },
 
   confectioner: {
@@ -328,9 +280,7 @@ export const bears = {
     coordinates: [39.888290, 57.623090],
     description:
       "Медведик посвящён истории кондитерского производства и предпринимательства Ярославля.",
-    sourceUrl:
-      "https://medved-yaroslavl.ru/",
-    image: "src/assets/confectioner.jpg"
+    image: "/bears_images/confectioner.jpg"
   },
 
   constructor: {
@@ -342,9 +292,7 @@ export const bears = {
     description:
       "Медведик посвящён инженерной мысли и ярославским конструкторам. " +
       "Его образ связан с Михаилом Кошкиным — уроженцем Ярославской губернии и известным конструктором.",
-    sourceUrl:
-      "https://medved-yaroslavl.ru/medvedik-konstruktor",
-    image: "src/assets/constructor.jpg"
+    image: "/bears_images/constructor.jpg"
   },
 
   brewer: {
@@ -355,9 +303,7 @@ export const bears = {
     coordinates: [39.899611, 57.621845],
     description:
       "Медведик посвящён истории пивоварения и промышленного производства Ярославля.",
-    sourceUrl:
-      "https://medved-yaroslavl.ru/",
-    image: "src/assets/brewer.webp"
+    image: "/bears_images/brewer.webp"
   },
 
   laborDynasty: {
@@ -368,9 +314,7 @@ export const bears = {
     coordinates: [39.867482, 57.626467],
     description:
       "Композиция посвящена трудовым династиям — преемственности профессии и семейным традициям.",
-    sourceUrl:
-      "https://medved-yaroslavl.ru/",
-    image: "src/assets/laborDinasty.webp"
+    image: "/bears_images/laborDinasty.webp"
   },
 
   mintWorker: {
@@ -381,9 +325,7 @@ export const bears = {
     coordinates: [39.886709, 57.623733],
     description:
       "Медведик посвящён истории чеканки и денежного дела Ярославля.",
-    sourceUrl:
-      "https://medved-yaroslavl.ru/",
-    image: "src/assets/mintWorker.webp"
+    image: "/bears_images/mintWorker.webp"
   },
 
   champion: {
@@ -394,9 +336,7 @@ export const bears = {
     coordinates: [39.836340, 57.626211],
     description:
       "Медведик посвящён спортивным достижениям Ярославля.",
-    sourceUrl:
-      "https://medved-yaroslavl.ru/",
-    image: "src/assets/champion.webp"
+    image: "/bears_images/champion.webp"
   },
 
   printer: {
@@ -407,9 +347,7 @@ export const bears = {
     coordinates: [39.880297, 57.628393],
     description:
       "Медведик посвящён истории типографского дела, печати и журналистики Ярославля.",
-    sourceUrl:
-      "https://medved-yaroslavl.ru/doctor",
-    image: "src/assets/printer.webp"
+    image: "/bears_images/printer.webp"
   },
 
   doctor: {
@@ -420,9 +358,7 @@ export const bears = {
     coordinates: [39.896338, 57.624294],
     description:
       "Новый медведик, открытый в сентябре 2026 года. Он представляет собирательный образ врача и посвящён истории и современности ярославской медицины.",
-    sourceUrl:
-      "https://medved-yaroslavl.ru/doctor",
-    image: "src/assets/doctor.webp"
+    image: "/bears_images/doctor.webp"
   },
 
   volleyball: {
@@ -433,9 +369,7 @@ export const bears = {
     coordinates: [39.940575, 57.557869],
     description:
     "описание для карточки",
-    sourceUrl:
-      "https://medved-yaroslavl.ru/doctor",
-    image: "src/assets/volleyball.webp"
+    image: "/bears_images/volleyball.webp"
   }
   
 };
