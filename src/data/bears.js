@@ -80,7 +80,7 @@ export const bears = {
       "описание карточки",
     sourceUrl:
       "",
-    image: "src/assets/artist.webp"
+    image: "src/assets/artist.jpg"
   },
 
   traveler: {
@@ -93,7 +93,7 @@ export const bears = {
       "описание карточки",
     sourceUrl:
       "",
-    image: "src/assets/traveler.webp"
+    image: "src/assets/traveler.jpg"
   },
 
   clerk: {
@@ -132,7 +132,7 @@ export const bears = {
       "описание карточки",
     sourceUrl:
       "",
-    image: "src/assets/writer.webp"
+    image: "src/assets/writer.jpg"
   },
 
   blacksmith: {
@@ -171,7 +171,7 @@ export const bears = {
       "описание карточки",
     sourceUrl:
       "",
-    image: "src/assets/welcoming.webp"
+    image: "src/assets/welcoming.jpg"
   },
 
   friendly: {
