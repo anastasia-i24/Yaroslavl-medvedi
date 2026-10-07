@@ -27,18 +27,17 @@ export async function fetchWalkingRouteSegments(points) {
 
     const route = data.routes[0];
 
-    // Если OSRM вернул geometry как строку polyline — декодируем
+   
     if (typeof route.geometry === 'string') {
         const decoded = polyline.decode(route.geometry);
 
-        // polyline.decode возвращает [lat, lon], а Яндекс.Карты ждут [lon, lat]
-        // Поэтому разворачиваем каждую пару
+        
+
         const coordinates = decoded.map(([lat, lon]) => [lon, lat]);
 
         return [coordinates];
     }
 
-    // Если geometry — объект GeoJSON (на случай, если сервер всё-таки вернёт geojson)
     if (route.geometry?.coordinates?.length > 1) {
         return [route.geometry.coordinates];
     }

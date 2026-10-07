@@ -372,4 +372,119 @@ export const bears = {
     image: "/bears_images/volleyball.webp"
   }
   
+
+};
+// Достопримечательности. Ключ = id медведя, рядом с которым находится место.
+// title, address  — что показывать на карточке
+// image           — фото места в public/places/ (если файла нет, покажется фото медведя)
+// coordinates     — [долгота, широта]; если не указано, берутся координаты медведя.
+//                   Точные можно взять в Яндекс Картах: ПКМ по месту -> "Что здесь?"
+// ПРОВЕРЬТЕ названия и адреса: я не мог сверить их по вашим источникам.
+
+export const places = {
+  "bear-with-fish": {
+    title: "Парк 1000-летия Ярославля",
+    address: "Парк 1000-летия Ярославля",
+    image: "/places/park-1000.jpg",
+  },
+  welcoming: {
+    title: "Которосльная набережная",
+    address: "Которосльная набережная",
+    image: "/places/kotorosl.jpg",
+  },
+  friendly: {
+    title: "Стрелка и Успенский собор",
+    address: "Стрелка, слияние Волги и Которосли",
+    image: "/places/strelka.jpg",
+  },
+  merchant: {
+    title: "Нулевой километр Золотого кольца",
+    address: "Революционная улица",
+    image: "/places/zero-km.jpg",
+  },
+  "mint-worker": {
+    title: "Спасо-Преображенский монастырь",
+    address: "Богоявленская площадь",
+    image: "/places/spaso-preobrazhensky.jpg",
+  },
+  governor: {
+    title: "Вахромеевский бульвар и исторический центр",
+    address: "Вахромеевский бульвар",
+    image: "/places/center.jpg",
+  },
+  sower: {
+    title: "Советская площадь",
+    address: "Советская площадь",
+    image: "/places/sovetskaya.jpg",
+  },
+  "theatre-artist": {
+    title: "Волковский театр",
+    address: "Первомайский бульвар",
+    image: "/places/volkov-theatre.jpg",
+  },
+  poet: {
+    title: "Литературный Ярославль: улицы Некрасова",
+    address: "Первомайская улица",
+    image: "/places/nekrasov.jpg",
+  },
+  artist: {
+    title: "Волжская набережная и Губернаторский дом",
+    address: "Волжская набережная",
+    image: "/places/volga-embankment.jpg",
+  },
+  "bear-with-axe": {
+    title: "Улица Кирова и городской герб",
+    address: "ул. Кирова",
+    image: "/places/kirova.jpg",
+  },
+  printer: {
+    title: "Типография на Республиканской улице",
+    address: "Республиканская улица, 47Б",
+    image: "/places/printing-house.jpg",
+  },
+  "opera-singer": {
+    title: "Мемориальный дом-музей Л. В. Собинова",
+    address: "ул. Трефолева",
+    image: "/places/sobinov.jpg",
+  },
+  journalist: {
+    title: "Улица Кирова: колыбель провинциальной печати",
+    address: "ул. Кирова",
+    image: "/places/press.jpg",
+  },
+  confectioner: {
+    title: "Богоявленская площадь",
+    address: "Богоявленская площадь",
+    image: "/places/bogoyavlenskaya.jpg",
+  },
+  blacksmith: {
+    title: "Революционная улица: ремесленный посад",
+    address: "Революционная улица",
+    image: "/places/revolutsionnaya.jpg",
+  },
+  brewer: {
+    title: "Кировский район: от пивоварен к заводам",
+    address: "Кировский район",
+    image: "/places/kirovsky.jpg",
+  },
+  cosmonarynya: {
+    title: "Космический Ярославль",
+    address: "ул. Чайковского",
+    image: "/places/space.jpg",
+  },
+  constructor: {
+    title: "Родина создателя Т-34",
+    address: "ул. Свободы",
+    image: "/places/t34.jpg",
+  },
+  "labor-dynasty": {
+    title: "Трудовая слава Ярославля",
+    address: "ул. Победы",
+    image: "/places/labor.jpg",
+  },
+  worker: {
+    title: "Ярославский моторный завод",
+    address: "Юбилейный парк",
+    image: "/places/motor-plant.jpg",
+  },
 };
